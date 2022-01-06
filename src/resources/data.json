@@ -1,0 +1,14 @@
+[
+    {   "id":1,
+        "content": "Design of a well-thought-out, functional zoning of premises; development of a general concept of color and stylistic solutions, selection of necessary finishing materials and interior items, detailed stydy of all working drawings, creating high quality 3D visualization of each room. All this is a foundation for creating your future interior.",
+        "Name": "W.Grace"
+    },
+    {   "id":2,
+        "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, cupiditate!",
+        "Name": "Leon"
+    },
+    {   "id":3,
+        "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga distinctio praesentium animi repudiandae adipisci sint deleniti, sapiente tempora corporis officiis!;",
+       "Name": "Welma"
+    }
+]

@@ -2,14 +2,18 @@ import React from "react";
 
 import styled from 'styled-components';
 
+import {motion} from 'framer-motion';
+import {navAnim, navTitleAnim, navListAnim} from '../components/animation';
+
 const Nav = () => {
+
     return(
-        <StyledNav>
-            <StyledLeft>
-                <p>img</p>
+        <StyledNav variants={navAnim} initial="hidden" animate="show">
+            <StyledLeft variants={navTitleAnim}>
+                <div></div>
                 <h2>Builder</h2>
             </StyledLeft>
-            <StyledRight>
+            <StyledRight variants={navListAnim}>
                 <ul>
                     <li>Team</li>
                     <li>About Us</li>
@@ -25,7 +29,7 @@ const Nav = () => {
 export default Nav;
 
 
-const StyledNav = styled.div`
+const StyledNav = styled(motion.div)`
     min-height: 10vh;
     display:flex;
     justify-content: space-between;
@@ -35,7 +39,7 @@ const StyledNav = styled.div`
     border-bottom: 1px solid #bcc2d0;
 `
 
-const StyledLeft = styled.div`
+const StyledLeft = styled(motion.div)`
     display:flex;
     justify-content: center;
     align-items: center;
@@ -46,9 +50,16 @@ const StyledLeft = styled.div`
         font-family: "Times New Roman";
         font-weight: 600;
     }
+    & > div {
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 1px solid black;
+        border-bottom: 2px solid black;
+        border-right: 2px solid black;
+    }
 
 `
-const StyledRight = styled.div`
+const StyledRight = styled(motion.div)`
     ul{
         display:flex;
         justify-content: center;

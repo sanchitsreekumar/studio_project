@@ -7,8 +7,29 @@ const GlobalStyle = createGlobalStyle`
         box-sizing:border-box;
     }
 
+    ::-webkit-scrollbar{
+        background-color:white;
+        width:10px;
+    }
+    
+    ::-webkit-scrollbar-thumb{
+        background-color:rgba(0,0,0,0.3);
+        border-radius: 1000px;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+        background-color:rgba(0,0,0,0.6);
+    }
+ 
+
+
+    html,body{
+        height:100%;
+        
+    }
+
     body{
         font-family: "Helvetica";
+        overflow-x:hidden;
     }
     h3{
         font-size: 1.5rem;
@@ -25,6 +46,16 @@ const GlobalStyle = createGlobalStyle`
                 width:12rem;
             }
         }
+
+        // Animations
+        .cardAnimFlex[data-value="true"]{
+        /* background-color:yellow; */
+        
+         }
+        .cardAnimFlex[data-value="false"]{
+        /* background-color:none; */
+         }
+         
 
 `
 

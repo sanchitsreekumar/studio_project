@@ -2,25 +2,31 @@ import React from "react";
 import styled from "styled-components";
 import sofa from '../imgs/sofa.jpg';
 
+//Animation
+import {motion} from 'framer-motion';
+import {titleAnim, fade, containerAnim, photoAnim} from '../components/animation'
+
 const Main =() =>{
+
+
     return(
         <StyledContainer>
-            <StyledTop>
-                <h3>This is</h3>
-                <h1>Studio by Interior</h1>
+            <StyledTop variants={containerAnim} initial="hidden" animate="show">
+                <motion.h3 variants={titleAnim} >This is</motion.h3>
+                <motion.h1 variants={titleAnim} >Studio by Interior</motion.h1>
             </StyledTop>
             <StyledBottom>
                 <Card1>
-                    <div id="card-left">
-                        <h3>Feel the style</h3>
-                        <p>We create ergonomic spaces <br/> with individual design.</p>
-                        <button>Get Started</button>
-                    </div>
+                    <motion.div id="card-left"  variants={containerAnim} initial="hidden" animate="show">
+                        <motion.h3 variants={titleAnim}>Feel the style</motion.h3>
+                        <motion.p variants={titleAnim}>We create ergonomic spaces <br/> with individual design.</motion.p>
+                        <motion.button variants={fade} initial="hidden" animate="show">Get Started</motion.button>
+                    </motion.div>
                 </Card1>
                 <Card2>
-                    
-                        <img src={sofa} alt="" />
-                    
+                    <Hide>
+                    <motion.img variants={photoAnim} initial="hidden" animate="show" src={sofa} alt="" />
+                    </Hide>
                 </Card2>
             </StyledBottom>
         </StyledContainer>
@@ -36,7 +42,7 @@ const StyledContainer = styled.div`
     /* position:relative;
     top:0; */
 `
-const StyledTop = styled.div`
+const StyledTop = styled(motion.div)`
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -83,7 +89,7 @@ const Card2 = styled.div`
     flex:1; 
     /* flex-shrink: 0; */
     /* min-height:55vh; */
-    background-color:blue;
+    /* background-color:blue; */
     min-width: 60%;
     /* max-height: 55vh; */
 
@@ -95,7 +101,9 @@ const Card2 = styled.div`
             }
         
 `
-
+const Hide = styled.div`
+    overflow:hidden;
+`
 
 // const Card = styled.div`
 //     flex-basis: 30rem;
